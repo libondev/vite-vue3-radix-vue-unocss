@@ -1,12 +1,28 @@
 // import transformerDirectives from '@unocss/transformer-directives'
 import transformerVariantGroup from '@unocss/transformer-variant-group';
-import { defineConfig, presetMini } from 'unocss';
+import { defineConfig, presetMini, presetIcons } from 'unocss';
 
 export default defineConfig({
   presets: [
     presetMini({
       variablePrefix: '',
     }),
+    presetIcons({
+      extraProperties: {
+        display: 'inline-block',
+        'vertical-align': '-2px',
+      },
+    }),
+  ],
+
+  shortcuts: [
+    {
+      'flex-center': 'flex justify-center items-center',
+      'flex-col-center': 'flex flex-col justify-center items-center',
+      'absolute-center': 'absolute inset-0 m-auto',
+      'fixed-center':
+        'fixed left-50% top-50% translate-x--50% translate-y--50%',
+    },
   ],
 
   transformers: [

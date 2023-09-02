@@ -18,4 +18,8 @@ export default defineConfig({
       },
     }),
   ],
+
+  optimizeDeps: {
+    include: ['radix-vue'],
+  },
 });
